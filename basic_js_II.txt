@@ -1,0 +1,64 @@
+// spread & rest operators
+// ... spread operator -> used to split up array elements or object properties
+// ... rest operator -> used to merge a list of function arguments into an array
+
+const numbers = [1, 2, 3];
+const newNumbers = [...numbers, 4];
+
+console.log(newNumbers);
+
+const person = {
+  name: 'Jenn'
+};
+
+const newPerson = {
+  ...person, 
+  age: 29
+}
+
+console.log(newPerson);
+
+const filter = (...args) => {
+  return args.filter(el => el === 1);
+}
+
+console.log(filter(1, 2, 3));
+
+// destructuring
+// extract array elements or object properties and store them in variables
+
+// [a, b] = ['Hello', 'Jenn'] -> array destructuring
+// {name} = {name: 'Jenn', age: 29}
+
+const numbersAgain = [1, 2, 3];
+[num1, num2] = numbersAgain;
+console.log(num1, num2);
+
+// reference & primitive types
+
+const person = { //person object stored in memory
+  name: 'Jenn'
+}; // constant person pointer to object
+
+const secondPerson = person; // pointer to person object copied
+
+person.name = 'Manu';
+
+console.log(secondPerson);
+
+// can create a new secondPerson object instead
+
+const secondPerson = {
+  ...person // spread the arguments of person
+};
+
+// array functions
+
+const numbersThree = [1, 2, 3];
+
+const doubleNumbersThree = numbersThree.map((num) => {
+  return num * 2;
+});
+
+console.log(numbersThree);
+console.log(doubleNumbersThree);
