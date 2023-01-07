@@ -1,0 +1,77 @@
+// let for variable values and const for constant values
+let myName = "Jenn";
+console.log(myName);
+
+// normal function
+function printMyName(name) {
+  console.log(name);
+}
+printMyName("Jenn");
+
+// arrow function
+const printMyNameArrow = (name) => {
+  console.log(name);
+  //return name
+}
+
+printMyNameArrow("Jenn");
+
+// arrow function with a single return
+const multiply = number => number * 2; // can omit the word return
+
+
+// default vs named export
+// import {smth as Smth} from './utility.js'
+// import * as bundled from './utility.js'
+
+// classes
+
+class Human {
+  constructor() {
+    this.gender = "female";
+  }
+  
+  printGender() {
+    console.log(this.gender);
+  }
+}
+
+class Person extends Human {
+  constructor() {
+    super();
+    this.name = "Jenn";
+  }
+  
+  printMyName() {
+    console.log(this.name);
+  }
+}
+
+const person = new Person();
+person.printMyName();
+person.printGender();
+
+
+// properties & methods in classes (ES6 version)
+
+class Human {
+  
+  gender = "female";
+  
+  printGender = () => {
+    console.log(this.gender);
+  }
+}
+
+class Person extends Human {
+  name = "Jenn";
+  this.gender = "female";
+
+  printMyName = () => {
+    console.log(this.name);
+  }
+}
+
+const person = new Person();
+person.printMyName();
+person.printGender();
